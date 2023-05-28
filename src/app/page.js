@@ -1,8 +1,10 @@
 import Header from "@/components/header";
+import GlobalStyle from "./global";
 
 export default function HomePage(){
   return(
-  <div>
+   <div>
+    <GlobalStyle/>
     <Header/>
   </div>
   );

@@ -1,16 +1,48 @@
+'use client'
 import Link from "next/link";
+import styled from "styled-components";
+import Center from "./center";
+
+const StyledHeader = styled.header `
+    background-color: #222;
+`;
+
+const Logo = styled(Link)`
+    color: #fff;
+    text-decoration: none;
+`;
+const Wrapper = styled.div`
+    display:flex;
+    justify-content: space-between;
+    padding: 20px 0;
+`;
+
+const NavLink = styled(Link)`
+    color: #aaa;
+    text-decoration: none;
+`;
+
+const StyledNav = styled.nav`
+    display: flex;
+    gap: 15px
+
+`;
 
 export default function Header(){
     return(
-        <header>
-            <Link href={'/'}>FOOD SHOP</Link>
-            <nav>
-                <Link href={'/'}>Home</Link>
-                <Link href={'/shopping'}>Shopping</Link>
-                <Link href={'/categories'}>Categories</Link>
-                <Link href={'/account'}>Account</Link>
-                <Link href={'/cart'}>Cart (0)</Link>
-            </nav>
-        </header>
+        <StyledHeader>
+            <Center>
+                <Wrapper>
+                    <Logo href={'/'}>FOOD SHOP</Logo>
+                    <StyledNav>
+                        <NavLink href={'/'}>Home</NavLink>
+                        <NavLink href={'/shopping'}>Shopping</NavLink>
+                        <NavLink href={'/categories'}>Categories</NavLink>
+                        <NavLink href={'/account'}>Account</NavLink>
+                        <NavLink href={'/cart'}>Cart (0)</NavLink>
+                    </StyledNav>
+                </Wrapper>
+            </Center>
+        </StyledHeader>
     );
 }
